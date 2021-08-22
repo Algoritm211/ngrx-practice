@@ -10,3 +10,13 @@ export const getPosts = createSelector(
     return state.posts
   }
 )
+
+export const getPostById = createSelector(
+  getPostsState,
+  //Todo refactor deprecated structure
+  //@ts-ignore
+  (state, props) => {
+    //@ts-ignore
+    return state.posts.find((post) => post.id === props.id)
+  }
+)

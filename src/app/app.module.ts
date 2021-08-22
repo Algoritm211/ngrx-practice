@@ -9,13 +9,15 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AppReducer} from "./reducers";
 import { PostListComponent } from './post-list/post-list.component';
 import { AddPostComponent } from './add-post/add-post.component';
+import { UpdatePostComponent } from './update-post/update-post.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PostListComponent,
-    AddPostComponent
+    AddPostComponent,
+    UpdatePostComponent
   ],
   imports: [
     BrowserModule,

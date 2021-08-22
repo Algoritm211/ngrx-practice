@@ -19,7 +19,7 @@ export class AddPostComponent implements OnInit {
     this.postForm = new FormGroup({
       title: new FormControl(null, [
         Validators.required,
-        Validators.minLength(6),
+        Validators.minLength(5),
       ]),
       description: new FormControl(null, [
         Validators.required,
@@ -46,7 +46,7 @@ export class AddPostComponent implements OnInit {
     const titleForm = this.postForm.get('title')
     if (titleForm?.touched && !titleForm.valid) {
       if (titleForm.errors?.minlength) {
-        return 'Minimum length - 6 symbols';
+        return 'Minimum length - 5 symbols';
       }
       if (titleForm.errors?.required) {
         return 'Title of post is required';
