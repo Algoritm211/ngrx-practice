@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {State} from "../reducers";
 import { Store } from '@ngrx/store';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import {Post} from "../models/Post";
-import {addPost} from "../reducers/posts/post.action";
+import { addPost } from 'src/app/reducers/posts/post.action';
+import { Post } from 'src/app/models/Post';
+import { State } from 'src/app/reducers';
 
 @Component({
   selector: 'app-add-post',

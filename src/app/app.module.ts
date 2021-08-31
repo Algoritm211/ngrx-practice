@@ -5,25 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AppReducer} from "./reducers";
-import { PostListComponent } from './post-list/post-list.component';
-import { AddPostComponent } from './add-post/add-post.component';
-import { UpdatePostComponent } from './update-post/update-post.component';
+import {PostsModule} from "./posts/posts.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostListComponent,
-    AddPostComponent,
-    UpdatePostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
     StoreModule.forRoot(AppReducer, {}),
     EffectsModule.forRoot([])
   ],

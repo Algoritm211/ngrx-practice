@@ -1,12 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Store} from "@ngrx/store";
-import {State} from "../reducers";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs";
-import {getPostById} from "../reducers/posts/post.selector";
-import {Post} from "../models/Post";
-import {updatePost} from "../reducers/posts/post.action";
+import { Post } from 'src/app/models/Post';
+import { State } from 'src/app/reducers';
+import { getPostById } from 'src/app/reducers/posts/post.selector';
+import { updatePost } from 'src/app/reducers/posts/post.action';
 
 @Component({
   selector: 'app-update-post',
@@ -33,9 +33,12 @@ export class UpdatePostComponent implements OnInit, OnDestroy {
         .select(getPostById, {id: postId})
         .subscribe((data: Post) => {
           this.post = data
+          this.initializeForm()
         })
     })
+  }
 
+  initializeForm = () => {
     this.postForm = new FormGroup({
       title: new FormControl(this.post.title, [
         Validators.required,
