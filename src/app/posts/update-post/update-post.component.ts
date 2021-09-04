@@ -30,10 +30,12 @@ export class UpdatePostComponent implements OnInit, OnDestroy {
       const postId = params.get('id')
 
       this.postSubscription = this.store
-        .select(getPostById, {id: postId})
-        .subscribe((data: Post) => {
-          this.post = data
-          this.initializeForm()
+        .select(getPostById({id: postId as string}) )
+        .subscribe((data) => {
+          if (data) {
+            this.post = data
+            this.initializeForm()
+          }
         })
     })
   }

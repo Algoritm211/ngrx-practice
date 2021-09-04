@@ -11,12 +11,9 @@ export const getPosts = createSelector(
   }
 )
 
-export const getPostById = createSelector(
+export const getPostById = (props: {id: string}) => createSelector(
   getPostsState,
-  //Todo refactor deprecated structure
-  //@ts-ignore
-  (state, props) => {
-    //@ts-ignore
+  (state) => {
     return state.posts.find((post) => post.id === props.id)
   }
 )
