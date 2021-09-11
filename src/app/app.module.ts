@@ -8,6 +8,8 @@ import { EffectsModule } from '@ngrx/effects';
 import {AppReducer} from "./reducers";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { environment } from 'src/environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 @NgModule({
@@ -19,6 +21,9 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot(AppReducer, {}),
+    StoreDevtoolsModule.instrument({
+      logOnly: environment.production,
+    }),
     EffectsModule.forRoot([]),
     ReactiveFormsModule
   ],
