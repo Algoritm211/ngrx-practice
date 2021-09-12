@@ -11,8 +11,9 @@ import {User} from "../models/User";
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(
+    private http: HttpClient,
+  ) {}
 
   login = (email: string, password: string): Observable<AuthData> => {
     return this.http.post<AuthData>(

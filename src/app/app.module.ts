@@ -10,11 +10,13 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { environment } from 'src/environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
