@@ -24,7 +24,6 @@ export class AuthService {
 
   formatAuthUser = (data: AuthData) => {
     const expirationDate = new Date(new Date().getTime() + Number(data.expiresIn) * 1000)
-    const user = new User(data.email, data.idToken, data.localId, expirationDate)
-    return user
+    return new User(data.email, data.idToken, data.localId, expirationDate)
   }
 }
