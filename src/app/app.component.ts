@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import {Observable} from "rxjs";
-import {State} from "./reducers";
-import {getIsLoading} from "./reducers/shared/shared.selector";
+import { Observable } from 'rxjs';
+import { State } from './reducers';
+import { getIsLoading } from './reducers/shared/shared.selector';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.showLoading = this.store.select(getIsLoading)
+    this.showLoading = this.store.select(getIsLoading);
   }
-
 }

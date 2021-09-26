@@ -1,4 +1,4 @@
-export const sharedNode = 'shared'
+export const sharedNode = 'shared';
 
 export interface SharedState {
   isLoading: boolean
@@ -6,4 +6,4 @@ export interface SharedState {
 
 export const initialState: SharedState = {
   isLoading: false
-}
+};

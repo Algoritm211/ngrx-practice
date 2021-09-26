@@ -39,11 +39,11 @@ export class AddPostComponent implements OnInit {
         return 'Minimum length - 10 symbols';
       }
     }
-    return ''
+    return '';
   }
 
   showTitleErrors() {
-    const titleForm = this.postForm.get('title')
+    const titleForm = this.postForm.get('title');
     if (titleForm?.touched && !titleForm.valid) {
       if (titleForm.errors?.minlength) {
         return 'Minimum length - 5 symbols';
@@ -52,7 +52,7 @@ export class AddPostComponent implements OnInit {
         return 'Title of post is required';
       }
     }
-    return ''
+    return '';
   }
 
   onAddPost() {
@@ -64,7 +64,7 @@ export class AddPostComponent implements OnInit {
       id: Date.now().toString(),
       title: this.postForm.value.title,
       description: this.postForm.value.description,
-    }
+    };
 
     this.store.dispatch(addPost({ post }));
   }
